@@ -43,16 +43,37 @@ export const useAuth = () => {
     }
   }
 
-  useEffect(() => {
-  const getAndSetUser = async () => {
-    const data = await getMe();
-    setUser(data.user);
-    setLoading(false);
-    }
+  // useEffect(() => {
+  // const getAndSetUser = async () => {
+  //   const data = await getMe();
+  //   setUser(data.user);
+  //   setLoading(false);
+  //   }
 
+
+  // getAndSetUser();
+  // }, []);
+
+  useEffect(() => {
+
+  const getAndSetUser = async () => {
+
+    try {
+      const data = await getMe();
+
+      if (data) {
+        setUser(data.user);
+      }
+    } catch (err) {
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   getAndSetUser();
-  }, []);
+
+}, []);
 
   return { user, loading, handleRegister, handleLogin, handleLogout }
 }
