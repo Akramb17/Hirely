@@ -1,66 +1,794 @@
-.home {
-    width: 100%;
-    min-height: 100vh;
+// .home {
+//     width: 100%;
+//     min-height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    .interview-input-group{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      min-height: 500px;
-      min-width: 600px;
-    }
+//     .interview-input-group{
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       gap: 1rem;
+//       min-height: 500px;
+//       min-width: 600px;
+//     }
 
-    .input-group:has(textarea){
-      height: 100%;
-    }
+//     .input-group:has(textarea){
+//       height: 100%;
+//     }
 
-    textarea{
-      height: 100%;
-      width: 100%;
-      border: none;
-      outline: none;
-      padding-inline: 1rem;
-      padding-block: 0.75rem;
-      border-radius: 0.5rem;
+//     textarea{
+//       height: 100%;
+//       width: 100%;
+//       border: none;
+//       outline: none;
+//       padding-inline: 1rem;
+//       padding-block: 0.75rem;
+//       border-radius: 0.5rem;
 
-      background-color: #1a1f27;
-      color: whitesmoke;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//       background-color: #1a1f27;
+//       color: whitesmoke;
+//       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-      resize: none;
-    }
+//       resize: none;
+//     }
 
-    .left{
-      align-self: stretch;
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+//     .left{
+//       align-self: stretch;
+//       width: 50%;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 1rem;
+//     }
     
-    .file-label{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.75rem 1rem;
-      background-color: #e0ecff;
-      color: rgb(30, 30, 30);
-      border-radius: 0.5rem;
-      cursor: pointer;
-    }
+//     .file-label{
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       padding: 0.75rem 1rem;
+//       background-color: #e0ecff;
+//       color: rgb(30, 30, 30);
+//       border-radius: 0.5rem;
+//       cursor: pointer;
+//     }
 
-    .right {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-self: stretch;
-      gap: 1rem;
-      width: 50%;
-    }
+//     .right {
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: flex-start;
+//       align-self: stretch;
+//       gap: 1rem;
+//       width: 50%;
+//     }
+// }
+
+.hirely-home {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  padding: 34px 24px 24px;
+
+  background: #0b0e14;
+  color: #f4f4f6;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
+.hirely-home-header {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto 32px;
+
+  text-align: center;
+
+  h1 {
+    margin: 0;
+
+    color: #f7f7f8;
+
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    letter-spacing: -1px;
+
+    span {
+      color: #ff1680;
+    }
+  }
+
+  p {
+    margin: 9px auto 0;
+
+    max-width: 620px;
+
+    color: #818896;
+
+    font-size: 12px;
+    line-height: 1.55;
+  }
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.hirely-interview-card {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  background: #141820;
+
+  border: 1px solid #292e38;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.32);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.hirely-interview-content {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+
+  min-height: 500px;
+}
+
+
+/* =========================
+   LEFT / RIGHT SECTIONS
+========================= */
+
+.hirely-job-section,
+.hirely-profile-section {
+  min-width: 0;
+
+  padding: 27px 30px;
+}
+
+.hirely-job-section {
+  padding-right: 26px;
+}
+
+.hirely-profile-section {
+  padding-left: 26px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.hirely-divider {
+  width: 1px;
+
+  background: #292e38;
+}
+
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.hirely-section-heading {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 17px;
+}
+
+.hirely-heading-left {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  h2 {
+    margin: 0;
+
+    color: #f1f1f3;
+
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1;
+  }
+}
+
+.hirely-heading-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #241c31;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   REQUIRED
+========================= */
+
+.hirely-required {
+  padding: 4px 9px;
+
+  border-radius: 5px;
+
+  background: rgba(255, 22, 128, 0.1);
+
+  color: #ff1680;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   JOB TEXTAREA
+========================= */
+
+.hirely-job-textarea {
+  display: block;
+
+  width: 100%;
+  height: 350px;
+
+  padding: 14px;
+
+  resize: none;
+
+  border: 1px solid #303642;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #1b2130;
+
+  color: #e8e9ed;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: #747c8d;
+  }
+
+  &:focus {
+    border-color: #ff1680;
+
+    box-shadow:
+      0 0 0 2px rgba(255, 22, 128, 0.08);
+  }
+}
+
+
+/* =========================
+   CHARACTER COUNT
+========================= */
+
+.hirely-character-count {
+  margin-top: 6px;
+
+  color: #626a79;
+
+  font-size: 8px;
+
+  text-align: right;
+}
+
+
+/* =========================
+   FIELD LABEL
+========================= */
+
+.hirely-field-label {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+
+  color: #eeeeF1;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   BEST RESULTS
+========================= */
+
+.hirely-best-results {
+  padding: 3px 7px;
+
+  border-radius: 5px;
+
+  background: rgba(20, 220, 145, 0.1);
+
+  color: #28d99b;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   RESUME
+========================= */
+
+.hirely-resume-section {
+  width: 100%;
+}
+
+.hirely-upload-box {
+  width: 100%;
+  height: 110px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+
+  border: 1px dashed #414857;
+
+  border-radius: 8px;
+
+  background: #1b2130;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+
+  &:hover {
+    border-color: #ff1680;
+
+    background: #202534;
+  }
+}
+
+.hirely-upload-selected {
+  border-color: #28d99b;
+}
+
+.hirely-upload-icon {
+  margin-bottom: 8px;
+
+  color: #ff1680;
+
+  font-size: 24px;
+  line-height: 1;
+}
+
+.hirely-upload-title {
+  margin: 0;
+
+  color: #ededf0;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.hirely-upload-subtitle {
+  margin: 5px 0 0;
+
+  color: #747c8d;
+
+  font-size: 8px;
+}
+
+
+/* =========================
+   OR
+========================= */
+
+.hirely-or {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 15px 0;
+
+  span {
+    height: 1px;
+
+    flex: 1;
+
+    background: #2c313c;
+  }
+
+  p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 8px;
+  }
+}
+
+
+/* =========================
+   SELF DESCRIPTION
+========================= */
+
+.hirely-self-section {
+  width: 100%;
+}
+
+.hirely-self-textarea {
+  display: block;
+
+  width: 100%;
+  height: 90px;
+
+  padding: 12px;
+
+  resize: none;
+
+  border: 1px solid #303642;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #1b2130;
+
+  color: #e8e9ed;
+
+  font-family: inherit;
+
+  font-size: 10px;
+  line-height: 1.5;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: #747c8d;
+  }
+
+  &:focus {
+    border-color: #ff1680;
+
+    box-shadow:
+      0 0 0 2px rgba(255, 22, 128, 0.08);
+  }
+}
+
+
+/* =========================
+   INFO BOX
+========================= */
+
+.hirely-info-box {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: 14px;
+
+  padding: 10px 12px;
+
+  border-radius: 7px;
+
+  background: #202634;
+
+  .hirely-info-icon {
+    flex-shrink: 0;
+
+    color: #4da3ff;
+
+    font-size: 11px;
+  }
+
+  p {
+    margin: 0;
+
+    color: #858d9e;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    strong {
+      color: #c7ccd5;
+    }
+  }
+}
+
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.hirely-card-footer {
+  width: 100%;
+
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 14px 22px;
+
+  border-top: 1px solid #292e38;
+
+  background: #11151d;
+}
+
+.hirely-footer-text {
+  color: #687080;
+
+  font-size: 8px;
+}
+
+
+/* =========================
+   GENERATE BUTTON
+========================= */
+
+.hirely-generate-button {
+  min-width: 245px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 11px 17px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #ff1680;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 10px;
+  font-weight: 650;
+
+  box-shadow:
+    0 5px 18px rgba(255, 22, 128, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    background: #ff2b8c;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+      0 7px 22px rgba(255, 22, 128, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   PAGE FOOTER
+========================= */
+
+.hirely-footer {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 17px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 23px;
+
+  a {
+    color: #626a79;
+
+    font-size: 8px;
+
+    text-decoration: none;
+
+    &:hover {
+      color: #ff1680;
+    }
+  }
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.hirely-home-loading {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #0b0e14;
+
+  color: #ffffff;
+
+  h2 {
+    margin: 15px 0 5px;
+
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
+
+    color: #747c8d;
+
+    font-size: 11px;
+  }
+}
+
+.hirely-home-loader {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid #292e38;
+  border-top-color: #ff1680;
+
+  border-radius: 50%;
+
+  animation: hirely-spin 0.8s linear infinite;
+}
+
+@keyframes hirely-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+  .hirely-home {
+    padding: 30px 15px 20px;
+  }
+
+  .hirely-home-header {
+    h1 {
+      font-size: 27px;
+    }
+  }
+
+  .hirely-interview-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hirely-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .hirely-job-section,
+  .hirely-profile-section {
+    padding: 25px;
+  }
+
+  .hirely-job-textarea {
+    height: 280px;
+  }
+
+  .hirely-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hirely-generate-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .hirely-home {
+    padding: 25px 10px 18px;
+  }
+
+  .hirely-home-header {
+    margin-bottom: 25px;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+  }
+
+  .hirely-job-section,
+  .hirely-profile-section {
+    padding: 20px;
+  }
+
+  .hirely-card-footer {
+    padding: 15px;
+  }
+}
