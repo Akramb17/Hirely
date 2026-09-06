@@ -1,19 +1,80 @@
-.button {
-  border: none;
-  outline: none;
-  padding-inline: 1.5rem;
-  padding-block: 0.75rem;
-  border-radius: 1rem;
-  background-color: #e1034d;
+// .button {
+//   border: none;
+//   outline: none;
+//   padding-inline: 1.5rem;
+//   padding-block: 0.75rem;
+//   border-radius: 1rem;
+//   background-color: #e1034d;
 
-  transition: all 0.3s ease-in-out;
+//   transition: all 0.3s ease-in-out;
 
-  &.primary-button {
-    background-color: #e1034d;
-    color: white;
-  }
+//   &.primary-button {
+//     background-color: #e1034d;
+//     color: white;
+//   }
 
-  &:active{
-    transform: scale(0.9);
-  }
+//   &:active{
+//     transform: scale(0.9);
+//   }
+// }
+
+// .button {
+//   border: none;
+//   outline: none;
+//   padding-inline: 1.5rem;
+//   padding-block: 0.75rem;
+//   border-radius: 1rem;
+//   background-color: #e1034d;
+//   transition: all 0.3s ease-in-out;
+
+//   &.primary-button {
+//     background-color: #e1034d;
+//     color: white;
+
+//     width: 100%;
+//     min-height: 120px;
+
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+
+//     font-size: 1.5rem;
+//     font-weight: 500;
+//     line-height: 1.2;
+//     text-align: center;
+
+//     border-radius: 2rem;
+//     cursor: pointer;
+//     box-sizing: border-box;
+//   }
+
+//   &:active {
+//     transform: scale(0.9);
+//   }
+// }
+
+.button{
+
+    border: none;
+    outline: none;
+    padding-inline: 1.5rem;
+    padding-block: 0.75rem;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+
+    &.primary-button{
+        background-color: #e1034d;
+        color: white;
+        white-space: nowrap;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        
+    }
+
+    &:active{
+        transform: scale(0.9);
+    }
 }

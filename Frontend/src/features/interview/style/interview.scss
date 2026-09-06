@@ -31,6 +31,9 @@
   background: #141820;
   padding: 25px 14px;
   border-right: 1px solid #292f3b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hirely-nav-heading {
@@ -587,6 +590,9 @@
     border-right: none;
     border-bottom: 1px solid #292f3b;
     padding: 15px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
   }
 
   .hirely-nav-heading {
