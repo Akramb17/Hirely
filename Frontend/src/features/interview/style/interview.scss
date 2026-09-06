@@ -1,0 +1,682 @@
+.hirely-interview-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #0b0e14;
+  color: #f4f5f7;
+  padding: 28px 24px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hirely-interview-layout {
+  width: 100%;
+  max-width: 1180px;
+  min-height: calc(100vh - 56px);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) 220px;
+
+  background: #141820;
+  border: 1px solid #282e3a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* =========================================================
+   LEFT NAVIGATION
+   ========================================================= */
+
+.hirely-interview-nav {
+  background: #141820;
+  padding: 25px 14px;
+  border-right: 1px solid #292f3b;
+}
+
+.hirely-nav-heading {
+  margin: 0 0 15px 12px;
+
+  color: #858b98;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.hirely-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hirely-nav-item {
+  width: 100%;
+  min-height: 39px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: transparent;
+  color: #969ca8;
+
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.hirely-nav-item:hover {
+  background: #1d2330;
+  color: #e7e9ee;
+}
+
+.hirely-nav-item-active {
+  background: rgba(255, 22, 128, 0.13);
+  color: #ff1680;
+}
+
+.hirely-nav-item-active:hover {
+  background: rgba(255, 22, 128, 0.16);
+  color: #ff1680;
+}
+
+.hirely-nav-icon {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.hirely-interview-main {
+  min-width: 0;
+  background: #141820;
+  padding: 27px 28px 45px;
+  display: block;
+  align-self: stretch;
+  justify-self: stretch;
+}
+
+.hirely-main-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hirely-content-header {
+  padding: 0 2px 18px;
+  border-bottom: 1px solid #292f3b;
+}
+
+.hirely-content-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.hirely-content-title h1 {
+  margin: 0;
+
+  color: #f1f2f5;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.hirely-count-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 8px;
+  border: 1px solid #2d3442;
+
+  background: #1b2130;
+  color: #858c9b;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   QUESTION CARDS
+   ========================================================= */
+
+.hirely-question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  margin-top: 20px;
+}
+
+.hirely-question-card {
+  width: 100%;
+
+  border: 1px solid #252c3a;
+  border-radius: 7px;
+
+  background: #1b2130;
+
+  overflow: hidden;
+}
+
+.hirely-question-header {
+  width: 100%;
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 15px;
+
+  border: none;
+  background: transparent;
+
+  color: #e8e9ed;
+
+  cursor: pointer;
+  text-align: left;
+
+  transition: background 0.2s ease;
+}
+
+.hirely-question-header:hover {
+  background: #202737;
+}
+
+.hirely-question-number {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 5px;
+
+  background: rgba(255, 22, 128, 0.1);
+  color: #ff1680;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.hirely-question-text {
+  flex: 1;
+
+  color: #e8e9ee;
+
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.hirely-question-chevron {
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #747b89;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.hirely-question-chevron-open {
+  color: #ff1680;
+  transform: rotate(180deg);
+}
+
+.hirely-question-body {
+  padding: 0 17px 19px;
+
+  border-top: 1px solid #292f3b;
+}
+
+.hirely-question-section {
+  padding-top: 15px;
+}
+
+.hirely-question-section p {
+  margin: 9px 0 0;
+
+  color: #aeb3bd;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.hirely-question-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  border-radius: 3px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.hirely-intention-tag {
+  background: rgba(123, 97, 255, 0.12);
+  color: #9180ff;
+}
+
+.hirely-answer-tag {
+  background: rgba(35, 202, 89, 0.12);
+  color: #3bd86d;
+}
+
+/* =========================================================
+   ROADMAP
+   ========================================================= */
+
+.hirely-roadmap-list {
+  position: relative;
+
+  margin-top: 27px;
+  padding-left: 13px;
+}
+
+.hirely-roadmap-list::before {
+  content: "";
+
+  position: absolute;
+  top: 8px;
+  bottom: 14px;
+  left: 18px;
+
+  width: 2px;
+
+  background: #ff1680;
+  opacity: 0.65;
+}
+
+.hirely-roadmap-item {
+  position: relative;
+
+  display: flex;
+  gap: 19px;
+
+  min-height: 88px;
+  padding-bottom: 20px;
+}
+
+.hirely-roadmap-marker {
+  position: relative;
+  z-index: 2;
+
+  width: 13px;
+  height: 13px;
+
+  flex-shrink: 0;
+
+  margin-top: 5px;
+
+  border: 2px solid #ff1680;
+  border-radius: 50%;
+
+  background: #141820;
+  box-sizing: border-box;
+}
+
+.hirely-roadmap-marker span {
+  display: none;
+}
+
+.hirely-roadmap-content {
+  flex: 1;
+
+  padding-top: 0;
+}
+
+.hirely-roadmap-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.hirely-roadmap-day {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  border-radius: 4px;
+
+  background: rgba(255, 22, 128, 0.12);
+  color: #ff1680;
+
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hirely-roadmap-heading h3 {
+  margin: 0;
+
+  color: #e7e8ec;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.hirely-roadmap-content ul {
+  margin: 9px 0 0;
+  padding-left: 18px;
+}
+
+.hirely-roadmap-content li {
+  margin-bottom: 6px;
+
+  color: #aeb3bd;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.hirely-roadmap-content li::marker {
+  color: #777e8c;
+}
+
+/* =========================================================
+   RIGHT SIDEBAR
+   ========================================================= */
+
+.hirely-interview-sidebar {
+  min-width: 0;
+
+  padding: 27px 17px;
+
+  background: #141820;
+  border-left: 1px solid #292f3b;
+}
+
+.hirely-sidebar-heading {
+  margin: 0;
+
+  color: #858b98;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+/* =========================================================
+   MATCH SCORE
+   ========================================================= */
+
+.hirely-score-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hirely-score-ring {
+  width: 84px;
+  height: 84px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 14px;
+
+  border: 3px solid #35d66c;
+  border-radius: 50%;
+
+  box-sizing: border-box;
+}
+
+.hirely-score-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hirely-score-number {
+  color: #f1f2f4;
+
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hirely-score-percent {
+  margin-top: 3px;
+
+  color: #808694;
+
+  font-size: 8px;
+}
+
+.hirely-score-message {
+  margin: 10px 0 0;
+
+  color: #3bd86d;
+
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.hirely-sidebar-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 21px 0;
+
+  background: #292f3b;
+}
+
+/* =========================================================
+   SKILL GAPS
+   ========================================================= */
+
+.hirely-skill-section {
+  width: 100%;
+}
+
+.hirely-skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  margin-top: 13px;
+}
+
+.hirely-skill-tag {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 8px 9px;
+
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.hirely-skill-high {
+  background: rgba(255, 65, 76, 0.14);
+  border: 1px solid rgba(255, 65, 76, 0.12);
+  color: #ff5962;
+}
+
+.hirely-skill-medium {
+  background: rgba(232, 169, 45, 0.13);
+  border: 1px solid rgba(232, 169, 45, 0.12);
+  color: #e6ad39;
+}
+
+.hirely-skill-low {
+  background: rgba(35, 202, 89, 0.13);
+  border: 1px solid rgba(35, 202, 89, 0.12);
+  color: #3bd86d;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .hirely-interview-layout {
+    grid-template-columns: 175px minmax(0, 1fr) 200px;
+  }
+
+  .hirely-interview-main {
+    padding: 24px 22px 40px;
+  }
+
+  .hirely-interview-sidebar {
+    padding: 24px 14px;
+  }
+
+  .hirely-question-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hirely-interview-page {
+    padding: 12px;
+  }
+
+  .hirely-interview-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hirely-interview-nav {
+    border-right: none;
+    border-bottom: 1px solid #292f3b;
+    padding: 15px;
+  }
+
+  .hirely-nav-heading {
+    margin-bottom: 8px;
+  }
+
+  .hirely-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .hirely-nav-item {
+    width: auto;
+    min-width: max-content;
+    padding: 8px 11px;
+  }
+
+  .hirely-interview-main {
+    padding: 22px 15px 30px;
+  }
+
+  .hirely-interview-sidebar {
+    border-left: none;
+    border-top: 1px solid #292f3b;
+
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 15px;
+
+    padding: 20px 15px;
+  }
+
+  .hirely-sidebar-divider {
+    width: 1px;
+    height: 100%;
+    margin: 0;
+  }
+
+  .hirely-score-section {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hirely-content-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .hirely-content-title h1 {
+    font-size: 17px;
+  }
+
+  .hirely-question-header {
+    padding: 11px;
+  }
+
+  .hirely-question-text {
+    font-size: 12px;
+  }
+
+  .hirely-question-body {
+    padding: 0 11px 15px;
+  }
+
+  .hirely-question-section p {
+    font-size: 11px;
+  }
+
+  .hirely-roadmap-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hirely-roadmap-heading h3 {
+    font-size: 13px;
+  }
+
+  .hirely-roadmap-content li {
+    font-size: 10px;
+  }
+
+  .hirely-interview-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .hirely-sidebar-divider {
+    width: 100%;
+    height: 1px;
+  }
+}
