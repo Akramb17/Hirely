@@ -26,35 +26,6 @@ export const useInterview = () => {
     setReports
     } = context
 
-    // const generateReport = async ({ jobDescription, selfDescription, resumeFile }) => {
-
-    // setLoadingMessage("Creating your interview plan...")
-    // setLoading(true)
-
-    // let response = null
-
-    // try {
-
-    //     response = await generateInterviewReport({
-    //         jobDescription,
-    //         selfDescription,
-    //         resumeFile
-    //     })
-
-    //     setReport(response.interviewReport)
-
-    // } catch (error) {
-
-    //     console.log(error)
-
-    // } finally {
-
-    //     setLoading(false)
-
-    // }
-
-    // return response?.interviewReport
-    // }
     const generateReport = async ({ jobDescription, selfDescription, resumeFile }) => {
 
     setLoadingMessage("Creating your interview plan...")
@@ -75,7 +46,6 @@ export const useInterview = () => {
 
     } catch (error) {
 
-        console.log(error)
 
         if (error.response?.status === 503) {
         setErrorMessage(
@@ -107,7 +77,6 @@ export const useInterview = () => {
 
     } catch (error) {
 
-        console.log(error)
 
     } finally {
 
@@ -162,8 +131,6 @@ export const useInterview = () => {
         link.click()
 
     } catch (error) {
-
-        console.log(error)
 
     } finally {
 
