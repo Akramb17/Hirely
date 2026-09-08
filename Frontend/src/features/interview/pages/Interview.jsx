@@ -2,116 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../style/interview.scss";
 import { useInterview } from "../hooks/useInterview";
 import { useNavigate, useParams } from "react-router";
-
-// const report\ = {
-//   matchScore: 92,
-
-//   technicalQuestions: [
-//     {
-//       question:
-//         "How did you manage real-time communication and online presence tracking using Socket.io in your Nexora project?",
-//       intention:
-//         "To assess practical experience with WebSockets, event-driven architecture, and handling real-time application state.",
-//       answer:
-//         "Explain how Socket.io establishes a persistent WebSocket connection between the React client and Node.js server. Mention handling events like connection, disconnect, send_message, and receive_message. Describe using in-memory data structures or Redis/MongoDB to map active socket IDs to user IDs for live status tracking.",
-//     },
-//     {
-//       question:
-//         "How do you handle authentication and authorization using JWT and external providers like Clerk in MERN applications?",
-//       intention:
-//         "To evaluate understanding of session management, secure route protection, and token validation mechanisms.",
-//       answer:
-//         "Detail the process of issuing JWTs upon login, storing them securely (e.g., HTTP-only cookies), and passing them in Authorization headers. Explain creating custom Express middleware to verify token signatures and attach decoded user context to request objects. For Clerk, mention webhook syncing to keep local user database records updated.",
-//     },
-//     {
-//       question:
-//         "In your Hirely project, how did you structure the integration with the Google Gemini API, and how did you handle error management or rate limits?",
-//       intention:
-//         "To check understanding of third-party API integration, modular architecture, and resilient async programming.",
-//       answer:
-//         "Discuss isolating API calls into a dedicated service module away from controllers. Explain using async/await with try-catch blocks for error handling, sanitizing user inputs before prompting the LLM, and handling response parsing safely.",
-//     },
-//   ],
-
-//   behavioralQuestions: [
-//     {
-//       question:
-//         "Can you describe a challenge you faced when building the role-based Employee Management System and how you resolved it?",
-//       intention:
-//         "To evaluate problem-solving skills, state management choices, and technical decision-making under constraints.",
-//       answer:
-//         "Use the STAR method. Describe the challenge, such as synchronizing complex state across components using Context API versus LocalStorage sync. Detail how you structured state providers, debugged re-render issues, and ensured consistent task status updates across admin and employee views.",
-//     },
-//     {
-//       question:
-//         "How do you prioritize learning new web development technologies alongside completing project deliverables?",
-//       intention:
-//         "To gauge adaptability, time management, and commitment to continuous technical growth.",
-//       answer:
-//         "Explain your structured approach: setting dedicated daily or weekly time for practical building, focusing on high-impact tools needed for active projects like Gemini API or Socket.io, and writing clean, hands-on code to solidify knowledge.",
-//     },
-//   ],
-
-//   skillGaps: [
-//     {
-//       skill:
-//         "Automated Testing (Unit & Integration testing with Jest/Supertest)",
-//       severity: "medium",
-//     },
-//     {
-//       skill:
-//         "Cloud Deployment & CI/CD Pipelines (AWS/Docker beyond basic PaaS like Vercel/Render)",
-//       severity: "low",
-//     },
-//     {
-//       skill: "TypeScript for Full Stack Development",
-//       severity: "low",
-//     },
-//   ],
-
-//   preparationPlan: [
-//     {
-//       day: 1,
-//       focus: "Node.js & Express.js Core Mechanics",
-//       tasks: [
-//         "Review event loop, asynchronous non-blocking I/O, and middleware order.",
-//         "Practice writing custom middleware for error handling and JWT validation.",
-//       ],
-//     },
-//     {
-//       day: 2,
-//       focus: "React State Management & Hooks",
-//       tasks: [
-//         "Review React Context API performance optimization and custom hooks.",
-//         "Practice building complex state flows with useReducer and useEffect cleanups.",
-//       ],
-//     },
-//     {
-//       day: 3,
-//       focus: "MongoDB & Aggregations",
-//       tasks: [
-//         "Brush up on MongoDB indexing, schema design, and populate/lookup pipelines.",
-//         "Practice writing aggregation pipelines for real-time app metrics.",
-//       ],
-//     },
-//     {
-//       day: 4,
-//       focus: "Real-time WebSockets & API Architecture",
-//       tasks: [
-//         "Review Socket.io room management, broadcasting, and disconnection handlers.",
-//         "Prepare detailed walk-throughs for Nexora and Hirely architecture.",
-//       ],
-//     },
-//     {
-//       day: 5,
-//       focus: "DSA & Mock Interviews",
-//       tasks: [
-//         "Solve 5-10 standard array, string, and hash map problems in C++ / JS.",
-//         "Conduct a self-mock technical walkthrough covering project architecture and REST API design.",
-//       ],
-//     },
-//   ],
-// };
+import Loading from "../../auth/components/Loading";
 
 const navItems = [
   {
@@ -253,7 +144,7 @@ const RoadmapItem = ({ item }) => {
 
 const Interview = () => {
   const [activeSection, setActiveSection] = useState("technical");
-  const { report, getReportById, loading, getResumePdf } = useInterview()
+  const { report, getReportById, loading, loadingMessage, getResumePdf } = useInterview()
   const { interviewId } = useParams()
 
   useEffect(() => {
@@ -263,7 +154,7 @@ const Interview = () => {
   }, [interviewId])
 
   if (loading || !report) {
-    return <div>Loading...</div>
+    return <Loading message={loadingMessage} />;;
   }
 
   const renderMainContent = () => {

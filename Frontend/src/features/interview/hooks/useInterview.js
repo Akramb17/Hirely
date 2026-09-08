@@ -13,70 +13,163 @@ export const useInterview = () => {
         throw new Error("useInterview must be used within an InterviewProvider")
     }
 
-    const { loading, setLoading, report, setReport, reports, setReports } = context
+    const {
+    loading,
+    setLoading,
+    loadingMessage,
+    setLoadingMessage,
+    errorMessage,
+    setErrorMessage,
+    report,
+    setReport,
+    reports,
+    setReports
+    } = context
 
+    // const generateReport = async ({ jobDescription, selfDescription, resumeFile }) => {
+
+    // setLoadingMessage("Creating your interview plan...")
+    // setLoading(true)
+
+    // let response = null
+
+    // try {
+
+    //     response = await generateInterviewReport({
+    //         jobDescription,
+    //         selfDescription,
+    //         resumeFile
+    //     })
+
+    //     setReport(response.interviewReport)
+
+    // } catch (error) {
+
+    //     console.log(error)
+
+    // } finally {
+
+    //     setLoading(false)
+
+    // }
+
+    // return response?.interviewReport
+    // }
     const generateReport = async ({ jobDescription, selfDescription, resumeFile }) => {
-        setLoading(true)
-        let response = null
-        try {
-            response = await generateInterviewReport({ jobDescription, selfDescription, resumeFile })
-            setReport(response.interviewReport)
-        } catch (error) {
-            console.log(error)
-        } finally {
-            setLoading(false)
+
+    setLoadingMessage("Creating your interview plan...")
+    setLoading(true)
+    setErrorMessage("")
+
+    let response = null
+
+    try {
+
+        response = await generateInterviewReport({
+        jobDescription,
+        selfDescription,
+        resumeFile
+        })
+
+        setReport(response.interviewReport)
+
+    } catch (error) {
+
+        console.log(error)
+
+        if (error.response?.status === 503) {
+        setErrorMessage(
+            "AI Service Unavailable. The AI service is temporarily unavailable. Please try again later."
+        )
         }
 
-        return response?.interviewReport
+    } finally {
+
+        setLoading(false)
+
+    }
+
+    return response?.interviewReport
     }
 
     const getReportById = async () => {
-        setLoading(true)
-        let response = null
-        try {
-            response = await getInterviewReportById(interviewId)
-            setReport(response.interviewReport)
-        } catch (error) {
-            console.log(error)
-        } finally {
-            setLoading(false)
-        }
-        return response?.interviewReport
+
+    setLoadingMessage("Loading your interview plan...")
+    setLoading(true)
+
+    let response = null
+
+    try {
+
+        response = await getInterviewReportById(interviewId)
+
+        setReport(response.interviewReport)
+
+    } catch (error) {
+
+        console.log(error)
+
+    } finally {
+
+        setLoading(false)
+
     }
+
+    return response?.interviewReport
+    }
+
 
     const getReports = async () => {
-        setLoading(true)
-        let response = null
-        try {
-            response = await getAllInterviewReports()
-            console.log("REPORTS:", response)
-            setReports(response.interviewReports)
-        } catch (error) {
-            console.log(error)
-        } finally {
-            setLoading(false)
-        }
-
-        return response?.interviewReports
+    let response = null
+    try {
+        response = await getAllInterviewReports()
+        console.log("REPORTS:", response)
+        setReports(response.interviewReports)
+    } catch (error) {
+        console.log(error)
     }
 
+    return response?.interviewReports
+    }
+
+
     const getResumePdf = async (interviewReportId) => {
-        setLoading(true)
-        let response = null
-        try {
-            response = await generateResumePdf({ interviewReportId })
-            const url = window.URL.createObjectURL(new Blob([ response ], { type: "application/pdf" }))
-            const link = document.createElement("a")
-            link.href = url
-            link.setAttribute("download", `resume_${interviewReportId}.pdf`)
-            document.body.appendChild(link)
-            link.click()
-        }
-        catch (error) {
-            console.log(error)
-        } finally {
-            setLoading(false)
-        }
+
+    setLoadingMessage("Generating your resume...")
+    setLoading(true)
+
+    let response = null
+
+    try {
+
+        response = await generateResumePdf({ interviewReportId })
+
+        const url = window.URL.createObjectURL(
+            new Blob([response], { type: "application/pdf" })
+        )
+
+        const link = document.createElement("a")
+
+        link.href = url
+
+        link.setAttribute(
+            "download",
+            `resume_${interviewReportId}.pdf`
+        )
+
+        document.body.appendChild(link)
+
+        link.click()
+
+    } catch (error) {
+
+        console.log(error)
+
+    } finally {
+
+        setLoading(false)
+
+    }
     }
 
     useEffect(() => {
@@ -88,7 +181,17 @@ export const useInterview = () => {
         }
       }, [interviewId])
 
-    // return { loading, report, reports, generateReport, getReportById, getReports}
-    return { loading, report, reports, interviewId, generateReport, getReportById, getReports, getResumePdf}
+    return {
+    loading,
+    loadingMessage,
+    errorMessage,
+    report,
+    reports,
+    interviewId,
+    generateReport,
+    getReportById,
+    getReports,
+    getResumePdf
+    }
 
 }    

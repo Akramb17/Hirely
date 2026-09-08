@@ -576,34 +576,7 @@
   }
 }
 
-// .recent-reports {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 0.75rem;
-//   width: 100%;
-//   max-width: 900px;
-//   margin: 0 auto;
 
-//   .reports-list {
-//     display: flex;
-//     gap: 0.75rem;
-//     flex-wrap: wrap;
-    
-
-//     .report-item {
-//       background: #141820;
-//       border: 1px solid #292e38;
-//       border-radius: 0.5rem;
-//       padding: 1rem;
-//       flex: 1;
-//       display: flex;
-//       flex-direction: column;
-//       gap: 0.5rem;
-//       cursor: pointer;
-//       flex-shrink: 0;
-//     }
-//   }
-// }
 
 .recent-reports {
   display: flex;
@@ -789,5 +762,87 @@
 
   .hirely-card-footer {
     padding: 15px;
+  }
+}
+
+
+.hirely-logout-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 13px;
+
+  border: 1px solid #2d3442;
+  border-radius: 7px;
+
+  background: #141820;
+  color: #aeb3bd;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.hirely-logout-button:hover {
+  background: #1d2330;
+  border-color: #ff1680;
+  color: #ff1680;
+}
+
+.hirely-logout-button:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 600px) {
+  .hirely-logout-button {
+    position: static;
+    margin: 12px auto 0;
+  }
+}
+
+.hirely-error-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  width: 300px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(255, 65, 76, 0.3);
+  border-radius: 8px;
+
+  background: #1b2130;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+  strong {
+    display: block;
+    color: #ff5962;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 5px 0 0;
+    color: #aeb3bd;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .hirely-error-toast {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
   }
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../auth.form.scss'
 import { useNavigate, Link } from 'react-router'
 import { useAuth } from '../hooks/useAuth.js'
+import Loading from '../components/Loading.jsx'
 
 const Login = () => {
 
@@ -18,7 +19,8 @@ const Login = () => {
   }
 
   if (loading) {
-    return <main><h1>Loading......</h1></main>
+    return <Loading message="Loading your dashboard..." />
+
   }
 
   return (
